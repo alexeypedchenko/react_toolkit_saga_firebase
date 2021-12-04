@@ -1,0 +1,19 @@
+.navbar {
+  padding: 20px;
+  display: flex;
+  a:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+.link {
+  padding: 5px 10px;
+  color: lime;
+  text-decoration: none;
+  background: #000;
+  &:hover {
+    text-decoration: underline;
+  }
+  &.active {
+    text-decoration: underline;
+  }
+}
