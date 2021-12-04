@@ -12,7 +12,7 @@ import { signin, signout } from '../../../firebase/firebaseAuth'
 function* auth(action) {
   try {
     const user = yield call(signin, action.payload)
-    yield put(setUser(user))
+    // yield put(setUser(user))
   } catch (err) {
     yield put(errorUser(err))
   }

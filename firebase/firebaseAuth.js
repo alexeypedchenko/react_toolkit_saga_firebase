@@ -39,14 +39,6 @@ export const signout = () => new Promise((res, rej) => {
   })
 })
 
-export const authWatcher = () => new Promise((res, rej) => {
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      console.log('user:', user)
-      res(user.providerData[0])
-    } else {
-      console.log('else:')
-      rej('authWatcher no user')
-    }
-  })
+export const authWatcher = (cb) => onAuthStateChanged(auth, (user) => {
+  if (user) cb(user.providerData[0])
 })
